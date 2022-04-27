@@ -14,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import md.dani3lz.tmps_project.Model.Component;
+import md.dani3lz.tmps_project.Model.InitComponents;
 import md.dani3lz.tmps_project.Model.MyListener;
 
 import java.io.IOException;
@@ -71,28 +72,37 @@ public class StoreController implements Initializable {
     private List<Component> components = new ArrayList<>();
     private MyListener myListener;
 
-    private List<Component> getData(){
-        List<Component> listComponents = new ArrayList<>();
-        Component component;
 
-        for(int i = 0; i < 5; i++){
-            component = new Component();
-            component.setName("NVIDIA GTX 1050TI");
-            component.setPrice(4500);
-            component.setImgSrc("img/nvidia/msi-geforce-gtx-1050-ti-gaming-4g.png");
-            component.setColor("2a2a2b");
-            listComponents.add(component);
-        }
+    public void btnALL(){
+        initMethod(InitComponents.Option.ALL);
+    }
 
-        component = new Component();
-        component.setName("AMD Radeon RX5700XT");
-        component.setPrice(25500);
-        component.setImgSrc("img/amd/gpu/237107-rx5700xt-gpu-gallery2-1260x709.png");
-        component.setColor("450303");
-        listComponents.add(component);
+    public void btnGPU(){
+        initMethod(InitComponents.Option.GPU);
+    }
 
+    public void btnCPU(){
+        initMethod(InitComponents.Option.CPU);
+    }
 
-        return listComponents;
+    public void btnRAM(){
+        initMethod(InitComponents.Option.RAM);
+    }
+
+    public void btnMouse(){
+        initMethod(InitComponents.Option.MOUSE);
+    }
+
+    public void btnKeyboard(){
+        initMethod(InitComponents.Option.KEYBOARD);
+    }
+
+    public void btnHeadphone(){
+        initMethod(InitComponents.Option.HEADPHONE);
+    }
+
+    public void btnSpeaker(){
+        initMethod(InitComponents.Option.SPEAKER);
     }
 
     private void setCard(Component component){
@@ -104,10 +114,12 @@ public class StoreController implements Initializable {
                                     "    -fx-background-radius: 30;");
     }
 
+    private void initMethod(InitComponents.Option option){
+        grid.getChildren().clear();
+        List<Component> components;
+        InitComponents initComponents = InitComponents.getInstance();
+        components = initComponents.getData(option);
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        components.addAll(getData());
         if(components.size() > 0){
             setCard(components.get(0));
             myListener = new MyListener() {
@@ -150,5 +162,10 @@ public class StoreController implements Initializable {
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        initMethod(InitComponents.Option.ALL);
     }
 }
