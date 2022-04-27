@@ -1,0 +1,36 @@
+.search-box {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 100;
+}
+
+.transaprent {
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.search-btn{
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.left-bar {
+    -fx-background-color: #D3D3D3;
+}
+
+.shadow {
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1), 10.0, 0.0, 0.0, 10.0);
+}
+
+.card {
+    -fx-background-color: #2a2a2b;
+    -fx-background-radius: 30;
+}
+
+.add-btn {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 30;
+}
+
+.item {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 30;
+}
