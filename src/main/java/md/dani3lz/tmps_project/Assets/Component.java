@@ -6,6 +6,11 @@ public class Component {
     private String imgSrc;
     private String color;
 
+    private int nrInCart = 1;
+
+    public int getNrInCart() { return nrInCart;}
+    public void setNrInCart() {++nrInCart;}
+
     public String getName() {
         return name;
     }

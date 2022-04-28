@@ -27,8 +27,6 @@ public class ComponentController {
         priceLabel.setText(component.getPrice() + " MDL");
         Image image = new Image(getClass().getResourceAsStream(component.getImgSrc()));
         img.setImage(image);
-
-
     }
 
     public void click(javafx.scene.input.MouseEvent mouseEvent) {

@@ -63,3 +63,13 @@
     -fx-background-color: #FFF;
     -fx-background-radius: 30;
 }
+
+.login-box {
+    -fx-background-color: #DEDEDE;
+    -fx-background-radius: 30;
+}
+
+.cart-box {
+    -fx-background-color: #DEDEDE;
+    -fx-background-radius: 10;
+}
