@@ -73,3 +73,17 @@
     -fx-background-color: #DEDEDE;
     -fx-background-radius: 10;
 }
+
+.checkout-btn {
+    -fx-background-color: #D55E32;
+    -fx-background-radius: 30;
+    -fx-text-fill: #FFF;
+}
+
+.checkout-btn:hover:pressed{
+    -fx-background-color: #BE532D;
+}
+
+.checkout-btn:hover{
+    -fx-background-color: #F96D3B;
+}

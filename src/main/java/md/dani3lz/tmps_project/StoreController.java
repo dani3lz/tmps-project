@@ -114,6 +114,14 @@ public class StoreController implements Initializable {
                 GridPane.setMargin(anchorPane, new Insets(10));
             }
 
+            if(componentsToCart.size() > 0) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("checkout.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
+                grid.add(anchorPane, column, row);
+                GridPane.setMargin(anchorPane, new Insets(10));
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }

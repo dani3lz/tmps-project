@@ -35,7 +35,6 @@ public class CartController implements Initializable {
         Image image = new Image(getClass().getResourceAsStream(component.getImgSrc()));
         cartImg.setImage(image);
         spinnerValueFactory.setValue(component.getNrInCart());
-        cartNumber.setValueFactory(spinnerValueFactory);
     }
 
 
