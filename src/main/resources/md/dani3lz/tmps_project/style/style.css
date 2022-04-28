@@ -46,6 +46,19 @@
     -fx-background-color: #E7E7E7;
 }
 
+.btn-selected {
+    -fx-background-color: #D55E32;
+    -fx-text-fill: #FFF;
+}
+
+.btn-selected:hover:pressed{
+    -fx-background-color: #E46436;
+}
+
+.btn-selected:hover{
+    -fx-background-color: #A64927;
+}
+
 .item {
     -fx-background-color: #FFF;
     -fx-background-radius: 30;
