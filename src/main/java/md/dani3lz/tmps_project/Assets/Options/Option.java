@@ -8,5 +8,7 @@ public enum Option {
     MOUSE,
     KEYBOARD,
     HEADPHONE,
-    SPEAKER
+    SPEAKER,
+
+    SEARCH
 }

@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -28,12 +29,12 @@
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <Label text="PC">
+                        <Label text="PC" textFill="WHITE">
                            <font>
-                              <Font name="Cambria Bold" size="36.0" />
+                              <Font name="Franklin Gothic Medium" size="36.0" />
                            </font>
                         </Label>
-                        <Label text="Store">
+                        <Label text="Store" textFill="WHITE">
                            <font>
                               <Font name="Cambria Italic" size="36.0" />
                            </font>
@@ -51,7 +52,7 @@
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
                      <children>
-                        <TextField prefHeight="40.0" prefWidth="200.0" promptText="Type here to search" styleClass="transaprent" stylesheets="@style/style.css">
+                        <TextField fx:id="inputSearch" prefHeight="40.0" prefWidth="203.0" promptText="Type here to search" styleClass="transaprent" stylesheets="@style/style.css">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -59,7 +60,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </TextField>
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" styleClass="search-btn" stylesheets="@style/style.css" text="Search" textFill="WHITE" />
+                        <Button fx:id="searchBtn" mnemonicParsing="false" onMouseClicked="#btnSearch" prefHeight="40.0" prefWidth="90.0" styleClass="search-btn" stylesheets="@style/style.css" text="Search" textFill="WHITE" />
                      </children>
                      <styleClass>
                         <String fx:value="search-box" />
@@ -94,7 +95,7 @@
                               <Font name="Cambria" size="20.0" />
                            </font>
                         </Label>
-                        <Button fx:id="componentSubmit" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" styleClass="add-btn" stylesheets="@style/style.css" text="ADD TO CART" textFill="#545454">
+                        <Button fx:id="componentSubmit" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" styleClass="btn" stylesheets="@style/style.css" text="ADD TO CART" textFill="#545454">
                            <VBox.margin>
                               <Insets bottom="20.0" top="30.0" />
                            </VBox.margin>
@@ -113,9 +114,9 @@
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="CENTER" prefHeight="83.0" prefWidth="864.0">
                      <children>
-                        <Button fx:id="allBtn" mnemonicParsing="false" onMouseClicked="#btnALL" prefHeight="40.0" prefWidth="60.0" styleClass="add-btn" stylesheets="@style/style.css" text="ALL" textFill="#545454">
+                        <Button fx:id="allBtn" mnemonicParsing="false" onMouseClicked="#btnALL" prefHeight="40.0" prefWidth="60.0" styleClass="btn" stylesheets="@style/style.css" text="ALL" textFill="#545454">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -123,7 +124,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="cpuBtn" mnemonicParsing="false" onMouseClicked="#btnCPU" prefHeight="40.0" prefWidth="60.0" styleClass="add-btn" stylesheets="@style/style.css" text="CPU" textFill="#545454">
+                        <Button fx:id="cpuBtn" mnemonicParsing="false" onMouseClicked="#btnCPU" prefHeight="40.0" prefWidth="60.0" styleClass="btn" stylesheets="@style/style.css" text="CPU" textFill="#545454">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -131,7 +132,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="gpuBtn" mnemonicParsing="false" onMouseClicked="#btnGPU" prefHeight="40.0" prefWidth="60.0" styleClass="add-btn" stylesheets="@style/style.css" text="GPU" textFill="#545454">
+                        <Button fx:id="gpuBtn" mnemonicParsing="false" onMouseClicked="#btnGPU" prefHeight="40.0" prefWidth="60.0" styleClass="btn" stylesheets="@style/style.css" text="GPU" textFill="#545454">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -139,7 +140,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="ramBtn" mnemonicParsing="false" onMouseClicked="#btnRAM" prefHeight="40.0" prefWidth="60.0" styleClass="add-btn" stylesheets="@style/style.css" text="RAM" textFill="#545454">
+                        <Button fx:id="ramBtn" mnemonicParsing="false" onMouseClicked="#btnRAM" prefHeight="40.0" prefWidth="60.0" styleClass="btn" stylesheets="@style/style.css" text="RAM" textFill="#545454">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -147,7 +148,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="mouseBtn" mnemonicParsing="false" onMouseClicked="#btnMouse" prefHeight="40.0" prefWidth="70.0" styleClass="add-btn" stylesheets="@style/style.css" text="Mouse" textFill="#545454">
+                        <Button fx:id="mouseBtn" mnemonicParsing="false" onMouseClicked="#btnMouse" prefHeight="40.0" prefWidth="70.0" styleClass="btn" stylesheets="@style/style.css" text="Mouse" textFill="#545454">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -155,7 +156,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="keyboardBtn" mnemonicParsing="false" onMouseClicked="#btnKeyboard" prefHeight="40.0" prefWidth="90.0" styleClass="add-btn" stylesheets="@style/style.css" text="Keyboard" textFill="#545454">
+                        <Button fx:id="keyboardBtn" mnemonicParsing="false" onMouseClicked="#btnKeyboard" prefHeight="40.0" prefWidth="90.0" styleClass="btn" stylesheets="@style/style.css" text="Keyboard" textFill="#545454">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -163,7 +164,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="headphoneBtn" mnemonicParsing="false" onMouseClicked="#btnHeadphone" prefHeight="40.0" prefWidth="100.0" styleClass="add-btn" stylesheets="@style/style.css" text="Headphone" textFill="#545454">
+                        <Button fx:id="headphoneBtn" mnemonicParsing="false" onMouseClicked="#btnHeadphone" prefHeight="40.0" prefWidth="100.0" styleClass="btn" stylesheets="@style/style.css" text="Headphone" textFill="#545454">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -171,7 +172,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="speakerBtn" mnemonicParsing="false" onMouseClicked="#btnSpeaker" prefHeight="40.0" prefWidth="80.0" styleClass="add-btn" stylesheets="@style/style.css" text="Speaker" textFill="#545454">
+                        <Button fx:id="speakerBtn" mnemonicParsing="false" onMouseClicked="#btnSpeaker" prefHeight="40.0" prefWidth="80.0" styleClass="btn" stylesheets="@style/style.css" text="Speaker" textFill="#545454">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -179,6 +180,18 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="864.0">
+                     <children>
+                        <Label fx:id="searchLabel" text="Search: " textFill="#8a8a8a">
+                           <font>
+                              <Font name="Cambria Italic" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
@@ -197,6 +210,7 @@
                         </ScrollPane>
                      </children>
                   </HBox>
+                  <ProgressBar fx:id="progressBar" prefHeight="10.0" prefWidth="864.0" progress="1.0" />
                </children>
             </VBox>
          </center>

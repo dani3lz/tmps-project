@@ -8,12 +8,20 @@
 }
 
 .search-btn{
-    -fx-background-color: #828282;
+    -fx-background-color: #D55E32;
     -fx-background-radius: 30;
 }
 
+.search-btn:hover:pressed{
+    -fx-background-color: #BE532D;
+}
+
+.search-btn:hover{
+    -fx-background-color: #F96D3B;
+}
+
 .left-bar {
-    -fx-background-color: #D3D3D3;
+    -fx-background-color: #4E2885;
 }
 
 .shadow {
@@ -25,9 +33,17 @@
     -fx-background-radius: 30;
 }
 
-.add-btn {
+.btn {
     -fx-background-color: #FFF;
     -fx-background-radius: 30;
+}
+
+.btn:hover:pressed{
+    -fx-background-color: #C7C7C7;
+}
+
+.btn:hover{
+    -fx-background-color: #E7E7E7;
 }
 
 .item {

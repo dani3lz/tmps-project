@@ -26,6 +26,7 @@ public class InitComponents {
             case SPEAKER -> components = Speaker.getSpeaker_List();
             case KEYBOARD -> components = Keyboard.getKeyboard_List();
             case HEADPHONE -> components = Headphone.getHeadphone_List();
+            case SEARCH -> components = Search.getSearchList();
         }
         return components;
     }

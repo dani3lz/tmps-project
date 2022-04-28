@@ -1,11 +1,15 @@
 package md.dani3lz.tmps_project;
 
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -24,48 +28,21 @@ import java.util.ResourceBundle;
 public class StoreController implements Initializable {
     @FXML
     private ImageView componentImg;
-
     @FXML
     private Label componentName;
-
     @FXML
     private Label componentPrice;
-
     @FXML
     private GridPane grid;
     @FXML
     private VBox pickComponentCard;
-
-    //-------------------------------------------
     @FXML
-    private Button componentSubmit;
-
-    //-------------------------------------------
-
+    private TextField inputSearch;
     @FXML
-    private Button allBtn;
-
+    private Label searchLabel;
     @FXML
-    private Button cpuBtn;
+    private ProgressBar progressBar;
 
-    @FXML
-    private Button gpuBtn;
-
-    @FXML
-    private Button headphoneBtn;
-
-    @FXML
-    private Button keyboardBtn;
-
-    @FXML
-    private Button mouseBtn;
-
-    @FXML
-    private Button ramBtn;
-
-    @FXML
-    private Button speakerBtn;
-    //-------------------------------------------
 
     private List<Component> components = new ArrayList<>();
     private MyListener myListener;
@@ -87,9 +64,7 @@ public class StoreController implements Initializable {
         initMethod(Option.RAM);
     }
 
-    public void btnMouse(){
-        initMethod(Option.MOUSE);
-    }
+    public void btnMouse(){ initMethod(Option.MOUSE);}
 
     public void btnKeyboard(){
         initMethod(Option.KEYBOARD);
@@ -103,6 +78,15 @@ public class StoreController implements Initializable {
         initMethod(Option.SPEAKER);
     }
 
+    public void btnSearch() {
+        String textInput = inputSearch.getText().toLowerCase();
+        inputSearch.clear();
+        searchLabel.setVisible(true);
+        searchLabel.setText("Search: \"" + textInput + "\"");
+        Search.searchComponents(textInput);
+        initMethod(Option.SEARCH);
+    }
+
     private void setCard(Component component){
         componentName.setText(component.getName());
         componentPrice.setText(component.getPrice() + " MDL");
@@ -113,6 +97,9 @@ public class StoreController implements Initializable {
     }
 
     private void initMethod(Option option){
+        if(option != Option.SEARCH){
+            searchLabel.setVisible(false);
+        }
         grid.getChildren().clear();
         List<Component> components;
         components = InitComponents.getInstance().getData(option);
@@ -146,16 +133,17 @@ public class StoreController implements Initializable {
 
                 grid.add(anchorPane, column++, row);
 
-                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
-                grid.setPrefWidth(Region.USE_COMPUTED_SIZE);
-                grid.setMaxWidth(Region.USE_PREF_SIZE);
-
-                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
-                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                grid.setMinHeight(Region.USE_PREF_SIZE);
-
                 GridPane.setMargin(anchorPane, new Insets(10));
             }
+
+            grid.setMinWidth(Region.USE_COMPUTED_SIZE);
+            grid.setPrefWidth(Region.USE_COMPUTED_SIZE);
+            grid.setMaxWidth(Region.USE_PREF_SIZE);
+
+            grid.setMinHeight(Region.USE_COMPUTED_SIZE);
+            grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
+            grid.setMinHeight(Region.USE_PREF_SIZE);
+
         } catch (IOException e){
             e.printStackTrace();
         }
@@ -163,6 +151,7 @@ public class StoreController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        progressBar.setVisible(false);
         initMethod(Option.ALL);
     }
 }
