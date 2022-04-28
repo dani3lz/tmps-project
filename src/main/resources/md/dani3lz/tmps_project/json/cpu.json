@@ -1,0 +1,20 @@
+[
+  {
+    "name": "AMD Ryzen 5600x",
+    "price": 6000.0,
+    "imgSrc": "img/amd/cpu/cpu.png",
+    "color": "2a2a2b"
+  },
+  {
+    "name": "AMD Ryzen 5600g",
+    "price": 5500.0,
+    "imgSrc": "img/amd/cpu/cpu.png",
+    "color": "2a2a2b"
+  },
+  {
+    "name": "AMD Ryzen 5700",
+    "price": 8000.0,
+    "imgSrc": "img/amd/cpu/cpu.png",
+    "color": "2a2a2b"
+  }
+]

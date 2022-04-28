@@ -1,0 +1,38 @@
+[
+  {
+    "name": "HyperX 4gb DDR4",
+    "price": 1000.0,
+    "imgSrc": "img/hyperx/ram/929-9292987_kingston-8gb-kit-hyperx-fury-ddr4-2666mhz-cl15.png",
+    "color": "2a2a2b"
+  },
+  {
+    "name": "HyperX 8gb DDR4",
+    "price": 1800.0,
+    "imgSrc": "img/hyperx/ram/929-9292987_kingston-8gb-kit-hyperx-fury-ddr4-2666mhz-cl15.png",
+    "color": "2a2a2b"
+  },
+  {
+    "name": "HyperX 16gb DDR4",
+    "price": 2500.0,
+    "imgSrc": "img/hyperx/ram/929-9292987_kingston-8gb-kit-hyperx-fury-ddr4-2666mhz-cl15.png",
+    "color": "2a2a2b"
+  },
+  {
+    "name": "Kingston 4gb DDR5",
+    "price": 1000.0,
+    "imgSrc": "img/kingston/ram_kingston.png",
+    "color": "2a2a2b"
+  },
+  {
+    "name": "Kingston 8gb DDR5",
+    "price": 1800.0,
+    "imgSrc": "img/kingston/ram_kingston.png",
+    "color": "2a2a2b"
+  },
+  {
+    "name": "Kingston 16gb DDR5",
+    "price": 2500.0,
+    "imgSrc": "img/kingston/ram_kingston.png",
+    "color": "2a2a2b"
+  }
+]

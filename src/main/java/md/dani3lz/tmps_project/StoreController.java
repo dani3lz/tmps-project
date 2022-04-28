@@ -12,7 +12,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import md.dani3lz.tmps_project.Model.*;
+import md.dani3lz.tmps_project.Assets.*;
+import md.dani3lz.tmps_project.Assets.Options.Option;
 
 import java.io.IOException;
 import java.net.URL;
@@ -114,8 +115,7 @@ public class StoreController implements Initializable {
     private void initMethod(Option option){
         grid.getChildren().clear();
         List<Component> components;
-        InitComponents initComponents = InitComponents.getInstance();
-        components = initComponents.getData(option);
+        components = InitComponents.getInstance().getData(option);
 
         if(components.size() > 0){
             setCard(components.get(0));
@@ -126,8 +126,10 @@ public class StoreController implements Initializable {
                 }
             };
         }
+
         int column = 0;
         int row = 1;
+
         try {
             for (Component component : components) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -153,8 +155,6 @@ public class StoreController implements Initializable {
                 grid.setMinHeight(Region.USE_PREF_SIZE);
 
                 GridPane.setMargin(anchorPane, new Insets(10));
-
-
             }
         } catch (IOException e){
             e.printStackTrace();

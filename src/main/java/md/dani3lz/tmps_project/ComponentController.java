@@ -4,9 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import md.dani3lz.tmps_project.Model.Component;
-import md.dani3lz.tmps_project.Model.MyListener;
-import org.w3c.dom.events.MouseEvent;
+import md.dani3lz.tmps_project.Assets.Component;
+import md.dani3lz.tmps_project.Assets.MyListener;
 
 public class ComponentController {
 

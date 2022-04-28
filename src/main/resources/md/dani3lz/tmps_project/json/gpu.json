@@ -1,0 +1,14 @@
+[
+  {
+    "name": "NVIDIA GTX 1050TI",
+    "price": 4500.0,
+    "imgSrc": "img/nvidia/msi-geforce-gtx-1050-ti-gaming-4g.png",
+    "color": "2a2a2b"
+  },
+  {
+    "name": "AMD Radeon RX5700XT",
+    "price": 25500.0,
+    "imgSrc": "img/amd/gpu/237107-rx5700xt-gpu-gallery2-1260x709.png",
+    "color": "2a2a2b"
+  }
+]

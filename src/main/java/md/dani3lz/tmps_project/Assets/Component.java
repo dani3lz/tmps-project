@@ -1,4 +1,4 @@
-package md.dani3lz.tmps_project.Model;
+package md.dani3lz.tmps_project.Assets;
 
 public class Component {
     private String name;

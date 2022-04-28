@@ -1,4 +1,4 @@
-package md.dani3lz.tmps_project.Model;
+package md.dani3lz.tmps_project.Assets.Options;
 
 public enum Option {
     ALL,
