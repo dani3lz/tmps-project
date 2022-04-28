@@ -37,8 +37,6 @@ public class Component {
         this.color = color;
     }
 
-    // ------------------------------------------
-
     public static class Builder {
         private Component component;
         public Builder(){

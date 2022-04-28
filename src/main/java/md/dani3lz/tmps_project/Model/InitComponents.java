@@ -12,16 +12,6 @@ public class InitComponents {
         }
         return instance;
     }
-    public enum Option {
-        ALL,
-        CPU,
-        GPU,
-        RAM,
-        MOUSE,
-        KEYBOARD,
-        HEADPHONE,
-        SPEAKER
-    }
 
     public List<Component> getData(Option option){
         List<Component> components = new ArrayList<>();

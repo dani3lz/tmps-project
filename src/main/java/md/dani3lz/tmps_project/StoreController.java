@@ -6,16 +6,13 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import md.dani3lz.tmps_project.Model.Component;
-import md.dani3lz.tmps_project.Model.InitComponents;
-import md.dani3lz.tmps_project.Model.MyListener;
+import md.dani3lz.tmps_project.Model.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -74,35 +71,35 @@ public class StoreController implements Initializable {
 
 
     public void btnALL(){
-        initMethod(InitComponents.Option.ALL);
+        initMethod(Option.ALL);
     }
 
     public void btnGPU(){
-        initMethod(InitComponents.Option.GPU);
+        initMethod(Option.GPU);
     }
 
     public void btnCPU(){
-        initMethod(InitComponents.Option.CPU);
+        initMethod(Option.CPU);
     }
 
     public void btnRAM(){
-        initMethod(InitComponents.Option.RAM);
+        initMethod(Option.RAM);
     }
 
     public void btnMouse(){
-        initMethod(InitComponents.Option.MOUSE);
+        initMethod(Option.MOUSE);
     }
 
     public void btnKeyboard(){
-        initMethod(InitComponents.Option.KEYBOARD);
+        initMethod(Option.KEYBOARD);
     }
 
     public void btnHeadphone(){
-        initMethod(InitComponents.Option.HEADPHONE);
+        initMethod(Option.HEADPHONE);
     }
 
     public void btnSpeaker(){
-        initMethod(InitComponents.Option.SPEAKER);
+        initMethod(Option.SPEAKER);
     }
 
     private void setCard(Component component){
@@ -114,7 +111,7 @@ public class StoreController implements Initializable {
                                     "    -fx-background-radius: 30;");
     }
 
-    private void initMethod(InitComponents.Option option){
+    private void initMethod(Option option){
         grid.getChildren().clear();
         List<Component> components;
         InitComponents initComponents = InitComponents.getInstance();
@@ -132,15 +129,15 @@ public class StoreController implements Initializable {
         int column = 0;
         int row = 1;
         try {
-            for (int i = 0; i < components.size(); i++) {
+            for (Component component : components) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("component.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ComponentController componentController = fxmlLoader.getController();
-                componentController.setData(components.get(i), myListener);
+                componentController.setData(component, myListener);
 
-                if (column == 3){
+                if (column == 3) {
                     column = 0;
                     row++;
                 }
@@ -166,6 +163,6 @@ public class StoreController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        initMethod(InitComponents.Option.ALL);
+        initMethod(Option.ALL);
     }
 }
